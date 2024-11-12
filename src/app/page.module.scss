@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  &__quotes{
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &__animated{
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .quote {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    line-height: 1rem;
+    width: 20vw;
+    margin: 2.5vh 2.5vw;
+    height: 20vh;
+    padding: 2rem 2rem;
+    text-align: justify;
+    transition: 0.25s;
+    border-radius: 1rem;
+    animation: running;
+    &:nth-of-type(odd){
+      animation: 3s infinite alternate texts;
+    }
+    &:nth-of-type(even){
+      animation: 4s infinite alternate-reverse texts ;
+    }
+
+    @keyframes texts {
+      from {line-height: 0.75vh; letter-spacing: 0.05vw}
+      to {line-height: 2.25vh; letter-spacing: 0.25vw}
+    }
+
+    &:hover{
+      animation: paused;
+      transition: 0.25s;
+      scale: 1.1;
+    }
+
+  }
+
+  .qouteFont{
+    &:first-letter{
+      font-size: 1.5rem;
+      color: black;
+      letter-spacing: 0.1vw;
+      background-color: white;
+      //filter: drop-shadow(16px 16px 20px red) invert(75%);
+    }
+  }
+}
+

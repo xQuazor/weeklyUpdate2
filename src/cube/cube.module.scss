@@ -1,0 +1,10 @@
+.container {
+
+  &__animated {
+    filter: blur(0.25vh) sepia(0.25) saturate(1.5);
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+  }
+}
